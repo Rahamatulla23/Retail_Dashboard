@@ -1,0 +1,70 @@
+DAX Measures
+=============
+Total Sales =
+SUMX(
+    Sales,
+    RELATED(Products[Price]) * Sales[Quantity]
+)
+
+Total Orders =
+DISTINCTCOUNT(Sales[OrderID])
+
+Total Customers =
+DISTINCTCOUNT(Customers[CustomerID])
+
+Total Quantity =
+SUM(Sales[Quantity])
+
+Profit =
+[Total Sales] * 0.18
+
+
+PAGE 1 — HOME DASHBOARD
+========================
+
+Visuals: KPI Cards
+
+Total Sales
+Total Profit
+Total Orders
+Total Customers
+
+Sales by Category → Column Chart
+Sales by Region → Map / Bar Chart
+Monthly Sales Trend → Line Chart
+
+Slicers
+Year
+Region
+Category
+
+
+PAGE 2 — PRODUCT ANALYSIS
+=========================
+Visuals
+
+Treemap → Sales by SubCategory
+Bar Chart → Top 10 Products
+Matrix → Brand vs Sales
+Scatter Plot → Discount vs Profit
+
+Slicers
+Brand
+Category
+
+PAGE 3 — CUSTOMER ANALYSIS
+===========================
+Visuals
+
+Donut → Segment Distribution
+Bar Chart → Top Customers
+Map → Customers by State
+Table → Customer-wise Sales
+
+PAGE 4 — REGION ANALYSIS
+=========================
+Visuals
+
+Filled Map
+Line Chart → Regional Monthly Sales
+Stacked Bar → Region vs Category
